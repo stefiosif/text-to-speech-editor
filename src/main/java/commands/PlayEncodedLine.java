@@ -15,7 +15,7 @@ public class PlayEncodedLine implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JFrame frameLineNum = new JFrame("Pick line to transform.");
 		frameLineNum.setBounds(100, 100, 370, 170);
-		frameLineNum.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frameLineNum.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		
 		JLabel lblNewLabel = new JLabel("Line index");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));

@@ -29,9 +29,9 @@ public class TuneAudio implements ActionListener {
 		audioFrame.setContentPane(contentPane);
 		
 		Font font = new Font("Consolas", Font.ITALIC, 12);
-		JSlider sliderVolume = new JSlider(JSlider.HORIZONTAL, MIN, MAX, volume);
-		JSlider sliderSpeechRate = new JSlider(JSlider.HORIZONTAL, MIN, MAX, rate);
-		JSlider sliderPitch = new JSlider(JSlider.HORIZONTAL, MIN, MAX, pitch);
+		JSlider sliderVolume = new JSlider(SwingConstants.HORIZONTAL, MIN, MAX, volume);
+		JSlider sliderSpeechRate = new JSlider(SwingConstants.HORIZONTAL, MIN, MAX, rate);
+		JSlider sliderPitch = new JSlider(SwingConstants.HORIZONTAL, MIN, MAX, pitch);
 		
 		sliderVolume.setMajorTickSpacing(40);
 		sliderVolume.setMinorTickSpacing(20);

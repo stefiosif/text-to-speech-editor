@@ -27,9 +27,9 @@ public class OpenDocument implements ActionListener {
 			view.getTextArea().setEditable(false);
 
 			try {
-				String aLine = "";
-				String text = "";
-	            FileReader fr = new FileReader(selectedFile); 
+				String aLine;
+				String text;
+	            FileReader fr = new FileReader(selectedFile);
 	            BufferedReader br = new BufferedReader(fr); 
 
 	            text = br.readLine();
