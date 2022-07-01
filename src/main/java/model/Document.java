@@ -18,12 +18,11 @@ public class Document {
 	private TextToSpeechAPI audioManager;
 	private boolean hasSave = false;
 	private LocalDateTime ldt;
-	
+
 	public Document(String author, String title) {
 		this.author = author;
 		this.title = title;
-		TextToSpeechAPIFactory factory = new TextToSpeechAPIFactory();
-		audioManager = factory.createTTSAPI("FreeTTSAdapter");
+		audioManager = TextToSpeechAPIFactory.createTTSAPI("FreeTTSAdapter");
 		setTTSAPI(audioManager);
 	}
 
@@ -43,8 +42,7 @@ public class Document {
 		}catch (IOException e) {
 		    e.printStackTrace();
 		}	
-		TextToSpeechAPIFactory factory = new TextToSpeechAPIFactory();
-		audioManager = factory.createTTSAPI("FreeTTSAdapter");
+		audioManager = TextToSpeechAPIFactory.createTTSAPI("FreeTTSAdapter");
 		setTTSAPI(audioManager);
 	}
 	
@@ -110,10 +108,6 @@ public class Document {
 
 	public void setHasSave(boolean hasSave) {
 		this.hasSave = hasSave;
-	}
-
-	public LocalDateTime getLdt() {
-		return ldt;
 	}
 
 	public void setLdt(LocalDateTime ldt) {

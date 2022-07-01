@@ -41,7 +41,6 @@ public class TuneEncoding implements ActionListener {
 		continueButton.addActionListener(e12 -> {
 			  Text2SpeechEditorView view = Text2SpeechEditorView.getViewInstance();
 			  Document document = view.getCurrentDocument();
-			  StrategiesFactory strategiesFactory = new StrategiesFactory();
 
 			  try {
 				  if (document.isHasSave()) {
@@ -55,7 +54,7 @@ public class TuneEncoding implements ActionListener {
 
 					  if (rot || bash) {
 						  view.setIsEncoded(true);
-						  EncodingStrategy enc = strategiesFactory.createStrategy(retval);
+						  EncodingStrategy enc = StrategiesFactory.createStrategy(retval);
 						  document.tuneEncodingStrategy(enc);
 					  } else {
 						  view.setIsEncoded(false);

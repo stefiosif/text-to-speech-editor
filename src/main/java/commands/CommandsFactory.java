@@ -3,8 +3,12 @@ package commands;
 import java.awt.event.ActionListener;
 
 public class CommandsFactory {
+
+	private CommandsFactory() {
+		throw new IllegalStateException("Utility class");
+	}
 	
-	public ActionListener createCommand(String commandType) {
+	public static ActionListener createCommand(String commandType) {
 		return switch (commandType) {
 			case "NewDocument" -> new NewDocument();
 			case "OpenDocument" -> new OpenDocument();

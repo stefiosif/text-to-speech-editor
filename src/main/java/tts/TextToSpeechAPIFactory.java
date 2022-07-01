@@ -1,15 +1,17 @@
 package tts;
 
-public class TextToSpeechAPIFactory{
-	
-	public TextToSpeechAPI createTTSAPI(String APIType) {
-		if (APIType.equals("FreeTTSAdapter")){
-			return new FreeTTSAdapter();
-		} else if (APIType.equals("FakeTextToSpeechAPI")) {
-			return new FakeTextToSpeechAPI();
-		} else {
-			return null;
-		}
+public class TextToSpeechAPIFactory {
+
+	private TextToSpeechAPIFactory() {
+		throw new IllegalStateException("Utility class");
+	}
+
+	public static TextToSpeechAPI createTTSAPI(String apiType) {
+		return switch (apiType) {
+			case "FreeTTSAdapter" -> new FreeTTSAdapter();
+			case "FakeTextToSpeechAPI" -> new FakeTextToSpeechAPI();
+			default -> null;
+		};
 	}
 
 }

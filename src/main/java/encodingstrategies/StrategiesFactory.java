@@ -1,14 +1,16 @@
 package encodingstrategies;
 
 public class StrategiesFactory{
-	
-	public EncodingStrategy createStrategy(String strategyType) {
-		if (strategyType.equals("Rot13Encoding")){
-			return new Rot13Encoding();
-		} else if (strategyType.equals("AtBashEncoding")) {
-			return new AtBashEncoding();
-		} else {
-			return null;
-		}
+
+	private StrategiesFactory() {
+		throw new IllegalStateException("Utility class");
+	}
+
+	public static EncodingStrategy createStrategy(String strategyType) {
+		return switch(strategyType){
+			case "Rot13Encoding" -> new Rot13Encoding();
+			case "AtBashEncoding" -> new AtBashEncoding();
+			default -> null;
+		};
 	}
 }
